@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Star Developers Technologies Pvt. Limited builds premium web, mobile, cloud, AI, and enterprise software solutions for businesses that want digital growth."
+    />
+    <meta
+      name="keywords"
+      content="IT company, software development, custom web development, mobile app development, cloud, AI automation, enterprise software"
+    />
+    <title>Star Developers Technologies Pvt. Limited</title>
+    <style>
+      :root {
+        --bg: #060b16;
+        --bg-soft: #0d1527;
+        --panel: rgba(17, 24, 39, 0.78);
+        --panel-strong: rgba(14, 19, 31, 0.96);
+        --surface: rgba(255, 255, 255, 0.04);
+        --surface-strong: rgba(255, 255, 255, 0.08);
+        --line: rgba(148, 163, 184, 0.2);
+        --text: #ebf4ff;
+        --muted: #9bb1ce;
+        --primary: #74f0ff;
+        --secondary: #7e7ef5;
+        --accent: #46d7b8;
+        --shadow: rgba(11, 20, 35, 0.7);
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: radial-gradient(circle at top, rgba(116,240,255,0.12), transparent 35%),
+                    radial-gradient(circle at 80% 10%, rgba(126,126,245,0.22), transparent 30%),
+                    var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+      }
+      a { color: inherit; text-decoration: none; }
+      img { max-width: 100%; display: block; }
+      .container { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+      .section { padding: 110px 0; }
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(6, 11, 22, 0.56);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 82px;
+        gap: 20px;
+      }
+      .brand { display: inline-flex; align-items: center; gap: 12px; }
+      .brand-mark {
+        width: 38px; height: 38px;
+        border-radius: 12px;
+        display: grid; place-items: center;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: #02111c; font-weight: 900;
+      }
+      .brand-copy { display: flex; flex-direction: column; line-height: 1; }
+      .brand-copy strong { font-size: 0.92rem; letter-spacing: 0.02em; }
+      .brand-copy small { color: var(--muted); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; }
+      .nav-links { display: flex; align-items: center; gap: 26px; color: var(--muted); }
+      .nav-links a { position: relative; font-size: 0.95rem; }
+      .nav-links a::after {
+        content: ''; position: absolute; left: 0; bottom: -7px; width: 100%; height: 1px; background: linear-gradient(90deg, var(--primary), transparent); transform: scaleX(0); transition: transform 0.25s ease;
+      }
+      .nav-links a:hover::after { transform: scaleX(1); }
+      .btn {
+        display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 20px; border-radius: 999px; border: 1px solid transparent; font-weight: 600;
+      }
+      .btn-primary {
+        background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #03131d; box-shadow: 0 18px 38px rgba(116, 240, 255, 0.22);
+      }
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.04); border-color: var(--line); color: var(--text);
+      }
+      .hero {
+        display: grid; grid-template-columns: 1.2fr 1fr; gap: 46px; align-items: center; padding: 110px 0 60px;
+      }
+      .eyebrow {
+        display: inline-flex; align-items: center; gap: 10px; color: var(--primary); background: rgba(116,240,255,0.08); border: 1px solid rgba(116,240,255,0.15); border-radius: 999px; padding: 9px 14px; font-size: 0.76rem; letter-spacing: 0.06em; text-transform: uppercase; }
+      .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 12px var(--primary); }
+      h1 {
+        margin: 22px 0 18px; font-size: clamp(2.8rem, 4vw, 5rem); line-height: 1.02; letter-spacing: -0.06em;
+      }
+      p { color: var(--muted); font-size: 1.04rem; line-height: 1.8; }
+      .hero-actions { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 30px; }
+      .hero-metrics {
+        display: flex; gap: 30px; flex-wrap: wrap; margin-top: 36px;
+      }
+      .hero-metrics div { display: flex; flex-direction: column; gap: 4px; }
+      .hero-metrics strong { font-size: 1.7rem; }
+      .hero-metrics span { color: var(--muted); font-size: 0.82rem; }
+      .glass-panel {
+        background: var(--panel); border: 1px solid var(--line); box-shadow: 0 30px 80px var(--shadow); border-radius: 28px;
+      }
+      .hero-visual {
+        min-height: 560px; padding: 24px; position: relative; overflow: hidden; display: grid; place-items: center; background: rgba(17,24,39,0.7);
+      }
+      .visual-core { position: relative; width: 260px; height: 260px; }
+      .core-ring {
+        position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(116,240,255,0.28); box-shadow: inset 0 0 25px rgba(116,240,255,0.06), 0 0 40px rgba(116,240,255,0.12);
+      }
+      .ring-one { transform: scale(1.3); }
+      .ring-two { transform: scale(1.6); }
+      .ring-three { transform: scale(1.9); }
+      .central-node {
+        position: absolute; inset: 50% auto auto 50%; transform: translate(-50%, -50%); width: 110px; height: 110px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, rgba(116,240,255,0.12), rgba(126,126,245,0.2)); border: 1px solid rgba(116,240,255,0.35); font-weight: 800; color: var(--primary); font-size: 1.8rem; box-shadow: 0 0 30px rgba(116,240,255,0.25);
+      }
+      .floating-panel {
+        position: absolute; background: rgba(12,18,30,0.85); border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px; min-width: 150px; box-shadow: 0 18px 30px rgba(0,0,0,0.2);
+      }
+      .floating-panel span { display: block; color: var(--muted); font-size: 0.7rem; margin-bottom: 6px; }
+      .floating-panel strong { font-size: 1rem; }
+      .panel-1 { top: 52px; left: 30px; }
+      .panel-2 { right: 24px; top: 120px; }
+      .panel-3 { left: 46px; bottom: 36px; }
+      .brand-strip {
+        padding: 20px 0 0; color: var(--muted); font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase;
+      }
+      .brand-logos {
+        display: flex; gap: 18px; flex-wrap: wrap; margin-top: 12px; padding: 18px 0 0; color: var(--text);
+      }
+      .brand-logos span {
+        background: rgba(255,255,255,0.04); border: 1px solid var(--line); border-radius: 999px; padding: 10px 18px; font-size: 0.85rem; letter-spacing: 0.08em;
+      }
+      .section-heading { margin-bottom: 32px; }
+      .section-heading h2 {
+        margin: 12px 0 0; font-size: clamp(2rem, 3vw, 3rem); line-height: 1.15; letter-spacing: -0.04em; max-width: 760px;
+      }
+      .eyebrow.small { font-size: 0.72rem; }
+      .services-grid {
+        display: grid; grid-template-columns: repeat(4, minmax(220px, 1fr)); gap: 22px;
+      }
+      .service-card {
+        background: rgba(255,255,255,0.02); border: 1px solid var(--line); border-radius: 20px; padding: 24px; min-height: 210px; box-shadow: 0 18px 34px rgba(0,0,0,0.06);
+      }
+      .service-icon {
+        color: var(--primary); background: rgba(116,240,255,0.08); width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center; font-weight: 700; margin-bottom: 22px;
+      }
+      .service-card h3 { margin: 0 0 10px; font-size: 1.3rem; }
+      .service-card p { margin: 0; color: var(--muted); font-size: 0.96rem; }
+      .solutions-grid {
+        display: grid; grid-template-columns: repeat(3, minmax(200px, 1fr)); gap: 20px;
+      }
+      .solution-card {
+        border-radius: 22px; padding: 26px; background: rgba(255,255,255,0.02); border: 1px solid var(--line);
+      }
+      .solution-card .num { color: var(--primary); font-weight: 800; font-size: 0.88rem; letter-spacing: 0.14em; }
+      .solution-card h3 { margin: 18px 0 10px; font-size: 1.5rem; }
+      .solution-card p { margin: 0; }
+      .config-section { background: rgba(255,255,255,0.02); }
+      .config-wrap { display: grid; gap: 28px; }
+      .configurator-layout {
+        display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 22px; align-items: start;
+      }
+      .configurator-form {
+        border-radius: 24px; padding: 28px; background: rgba(17,24,39,0.7); border: 1px solid var(--line);
+      }
+      .stepper { display: flex; gap: 12px; margin-bottom: 26px; }
+      .step {
+        width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font-size: 0.8rem; font-weight: 700; background: rgba(255,255,255,0.04); color: var(--muted); border: 1px solid var(--line);
+      }
+      .step.active { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #02111c; border-color: transparent; }
+      .config-step { display: none; }
+      .config-step.active { display: block; }
+      label { display: block; font-size: 0.9rem; color: var(--muted); margin-bottom: 12px; }
+      .pill-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+      .pill {
+        border: 1px solid var(--line); background: rgba(255,255,255,0.02); color: var(--text); border-radius: 999px; padding: 10px 14px; font-size: 0.8rem;
+      }
+      .pill.selected { background: rgba(116,240,255,0.12); border-color: rgba(116,240,255,0.35); color: var(--primary); }
+      .select-stack { display: grid; gap: 16px; }
+      select {
+        width: 100%; min-height: 48px; border-radius: 12px; border: 1px solid var(--line); background: rgba(255,255,255,0.02); color: var(--text); padding: 0 12px; margin-top: 8px;
+      }
+      .estimate-card {
+        border-radius: 24px; padding: 28px; background: rgba(17,24,39,0.78); border: 1px solid var(--line); min-height: 300px;
+      }
+      .estimate-card h3 { margin: 0 0 8px; font-size: 1.3rem; }
+      .estimate-price {
+        font-size: clamp(2.3rem, 3vw, 3.5rem); font-weight: 800; letter-spacing: -0.05em; margin: 22px 0 18px; color: var(--primary);
+      }
+      .estimate-list { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 10px; color: var(--muted); }
+      .estimate-list li::before { content: '✓'; color: var(--accent); margin-right: 8px; }
+      .contact-box {
+        display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 24px;
+      }
+      .card { background: rgba(255,255,255,0.02); border: 1px solid var(--line); border-radius: 20px; padding: 22px; }
+      .card h3 { margin-top: 0; }
+      .footer { padding: 30px 0 60px; color: var(--muted); }
+      .footer-row { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+      @media (max-width: 980px) {
+        .hero, .configurator-layout, .contact-box { grid-template-columns: 1fr; }
+        .services-grid { grid-template-columns: repeat(2, minmax(220px, 1fr)); }
+      }
+      @media (max-width: 720px) {
+        .nav-links { display: none; }
+        .services-grid, .solutions-grid { grid-template-columns: 1fr; }
+        .hero { padding-top: 70px; }
+        .hero-actions { flex-direction: column; align-items: stretch; }
+        .btn { width: 100%; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container">
+        <a class="brand" href="#top" aria-label="Star Developers home">
+          <span class="brand-mark">S</span>
+          <span class="brand-copy">
+            <strong>Star Developers</strong>
+            <small>Technologies</small>
+          </span>
+        </a>
+
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#configurator">Estimator</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#process">Process</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+          <a class="btn btn-primary" href="#contact">Book a Call</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero container">
+        <div class="hero-content">
+          <div class="eyebrow">
+            <span class="dot"></span>
+            Premium B2B IT solutions for ambitious brands
+          </div>
+          <h1>Building the future of business with design, software, and digital momentum.</h1>
+          <p>
+            We design and engineer high-performance websites, apps, automation systems, and enterprise platforms that help modern businesses scale with clarity and confidence.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#configurator">Start project</a>
+            <a class="btn btn-secondary" href="#portfolio">See portfolio</a>
+          </div>
+          <div class="hero-metrics">
+            <div>
+              <strong>250+</strong>
+              <span>Projects launched</span>
+            </div>
+            <div>
+              <strong>30+</strong>
+              <span>Industry verticals</span>
+            </div>
+            <div>
+              <strong>4 days</strong>
+              <span>Fast-track delivery</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual glass-panel" aria-label="3D technology platform preview">
+          <div class="visual-core">
+            <div class="core-ring ring-one"></div>
+            <div class="core-ring ring-two"></div>
+            <div class="core-ring ring-three"></div>
+            <div class="central-node">AI</div>
+          </div>
+
+          <div class="floating-panel panel-1">
+            <span>UX Strategy</span>
+            <strong>Growth Systems</strong>
+          </div>
+          <div class="floating-panel panel-2">
+            <span>Automation</span>
+            <strong>Cloud Ops</strong>
+          </div>
+          <div class="floating-panel panel-3">
+            <span>Digital Build</span>
+            <strong>Premium Experience</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="brand-strip container">
+        <span>Trusted by modern teams</span>
+        <div class="brand-logos">
+          <span>Fintech</span>
+          <span>Healthcare</span>
+          <span>Retail</span>
+          <span>Consulting</span>
+          <span>Logistics</span>
+        </div>
+      </section>
+
+      <section id="services" class="section container">
+        <div class="section-heading">
+          <span class="eyebrow small">Core capabilities</span>
+          <h2>Technology designed to unlock your next growth chapter.</h2>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon">01</div>
+            <h3>Website Design</h3>
+            <p>Conversion-first business websites with premium UX, faster load times, and scalable journeys.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">02</div>
+            <h3>Mobile Apps</h3>
+            <p>Native and cross-platform app experiences engineered for retention, speed, and reliability.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">03</div>
+            <h3>Custom Software</h3>
+            <p>Business systems, internal tools, and automation that bring operational efficiency to every team.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">04</div>
+            <h3>UI/UX Design</h3>
+            <p>Interfaces built around clarity, usability, and product trust from first click to final conversion.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">05</div>
+            <h3>Cloud & DevOps</h3>
+            <p>Scalable infrastructure, secure releases, and production-grade pipelines for modern teams.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">06</div>
+            <h3>AI & Automation</h3>
+            <p>Smart automation, chatbots, and AI-powered workflows that reduce friction and speed decisions.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">07</div>
+            <h3>E-commerce</h3>
+            <p>Retail experiences, online storefronts, and data-backed commerce systems built for growth.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">08</div>
+            <h3>ERP / CRM</h3>
+            <p>Operational workflows that centralize your customer, sales, and process management into one system.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section solutions container">
+        <div class="section-heading align-left">
+          <span class="eyebrow small">Business-first strategy</span>
+          <h2>Built for modern operators who need more than just code.</h2>
+        </div>
+
+        <div class="solutions-grid">
+          <div class="solution-card glass-panel">
+            <span class="num">01</span>
+            <h3>Launch in days, not months</h3>
+            <p>We move from strategy to delivery quickly, reducing bottlenecks while preserving quality.</p>
+          </div>
+          <div class="solution-card glass-panel">
+            <span class="num">02</span>
+            <h3>Present your business professionally</h3>
+            <p>Premium design helps you look established, trustworthy, and ready for higher-value clients.</p>
+          </div>
+          <div class="solution-card glass-panel">
+            <span class="num">03</span>
+            <h3>Built to win more enquiries</h3>
+            <p>Every page is optimized for clarity, conversion, and persuasive credibility signals.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="configurator" class="section config-section">
+        <div class="container config-wrap">
+          <div class="section-heading align-left">
+            <span class="eyebrow small">Interactive estimator</span>
+            <h2>Design your project in minutes.</h2>
+          </div>
+
+          <div class="configurator-layout">
+            <div class="configurator-form glass-panel">
+              <div class="stepper">
+                <span class="step active">1</span>
+                <span class="step">2</span>
+                <span class="step">3</span>
+                <span class="step">4</span>
+              </div>
+
+              <div class="config-step active">
+                <label>Project type</label>
+                <div class="pill-grid">
+                  <button type="button" class="pill selected">Website</button>
+                  <button type="button" class="pill">Mobile App</button>
+                  <button type="button" class="pill">ERP / CRM</button>
+                  <button type="button" class="pill">E-commerce</button>
+                  <button type="button" class="pill">Enterprise Platform</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="estimate-card glass-panel">
+              <h3>Estimated project</h3>
+              <div class="estimate-price">$2,400</div>
+              <p style="color: var(--muted); margin: 0;">A premium digital product built for measurable growth.</p>
+              <ul class="estimate-list">
+                <li>Custom interface design</li>
+                <li>Responsive user experience</li>
+                <li>Business-focused CTA flow</li>
+                <li>Performance and delivery support</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section container">
+        <div class="section-heading">
+          <span class="eyebrow small">Let’s build</span>
+          <h2>Start your next digital project with a team that thinks in outcomes.</h2>
+        </div>
+
+        <div class="contact-box">
+          <div class="card">
+            <h3>Contact details</h3>
+            <p>Email: hello@stardevelopers.tech</p>
+            <p>Phone: +91 98765 43210</p>
+            <p>Location: India</p>
+          </div>
+          <div class="card">
+            <h3>Working style</h3>
+            <p>Strategy-first delivery, thoughtful design, and technical execution tailored for businesses that want traction and trust.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer container">
+      <div class="footer-row">
+        <span>© 2026 Star Developers Technologies</span>
+        <span>Build smarter. Grow faster.</span>
+      </div>
+    </footer>
+  </body>
+</html>

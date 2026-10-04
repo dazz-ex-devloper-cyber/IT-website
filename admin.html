@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Admin dashboard for Star Developers Technologies lead capture and requirement submissions." />
+    <title>Admin Dashboard | Star Developers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body class="admin-page">
+    <div class="admin-shell">
+      <div class="admin-topbar">
+        <div>
+          <div class="eyebrow small">Project dashboard</div>
+          <h1 style="margin: 12px 0 0; font-size: clamp(2.2rem, 3vw, 3.2rem); letter-spacing: -0.06em;">Lead overview</h1>
+        </div>
+        <a class="btn btn-primary" href="/">Back to site</a>
+      </div>
+
+      <section class="admin-grid">
+        <div class="admin-stat glass-panel">
+          <strong id="totalLeads">0</strong>
+          <span>Total leads</span>
+        </div>
+        <div class="admin-stat glass-panel">
+          <strong id="projectLeads">0</strong>
+          <span>Project requirements</span>
+        </div>
+        <div class="admin-stat glass-panel">
+          <strong id="contactLeads">0</strong>
+          <span>Contact inquiries</span>
+        </div>
+      </section>
+
+      <section class="lead-table-wrap glass-panel">
+        <table class="lead-table">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Client</th>
+              <th>Company</th>
+              <th>Project</th>
+              <th>Contact</th>
+              <th>Summary</th>
+              <th>Created</th>
+            </tr>
+          </thead>
+          <tbody id="leadTableBody"></tbody>
+        </table>
+      </section>
+    </div>
+
+    <script type="module" src="/src/admin.js"></script>
+  </body>
+</html>
